@@ -1,14 +1,26 @@
 import React from "react";
-import { Button, StatusBar, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { MagnifyingGlassIcon } from "react-native-heroicons/outline";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home({ navigation }) {
   return (
-    <View className="flex-1 items-center justify-center bg-slate-500">
-      <Text>Home</Text>
-      <Button
-        title="Go to Detailed"
-        onPress={() => navigation.navigate("Detailed")}
-      />
+    <View className="flex-1 bg-slate-900">
+      <SafeAreaView>
+        <StatusBar style="light" />
+        <View className="flex-row justify-between items-center mx-4">
+          <Text style={{ color: "#fff", fontSize: 40 }}>Movie</Text>
+          <MagnifyingGlassIcon size={30} strokeWidth={2} color={"#fff"} />
+        </View>
+      </SafeAreaView>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      >
+        
+      </ScrollView>
     </View>
   );
 }

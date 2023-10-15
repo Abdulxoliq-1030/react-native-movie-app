@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 20 }}
       >
-        {trending.length > 0 && <TrendingMovie />}
+        {trending.length > 0 && <TrendingMovie trending={trending} />}
         {upcoming.length > 0 && <TopRatedMovie />}
         {topRated.length > 0 && <UpcomingMovie />}
       </ScrollView>

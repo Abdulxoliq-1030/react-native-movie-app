@@ -19,7 +19,7 @@ const similarMovie = (id) =>
 const personalDetail = (id) => `${BASE_URL}/person/${id}?api_key=${API_KEY}`;
 
 const personMovies = (id) =>
-  `${BASE_URL}/person/movie_credits${id}?api_key=${API_KEY}`;
+  `${BASE_URL}/person/${id}/movie_credits?api_key=${API_KEY}`;
 
 export const fetchMovieDetail = (id) => {
   return apiRequest(movieDetail(id));

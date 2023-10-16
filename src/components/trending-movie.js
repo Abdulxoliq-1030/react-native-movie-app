@@ -1,10 +1,10 @@
 import React from "react";
-import { Dimensions, Text, View } from "react-native";
+import { Dimensions, Text, TouchableWithoutFeedback, View } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import MovieCard from "./movie-card";
-import Loader from "./loader";
+import { useNavigation } from "@react-navigation/native";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 export default function TrendingMovie({ trending }) {
   return (

@@ -16,6 +16,11 @@ const movieCredits = (id) =>
 const similarMovie = (id) =>
   `${BASE_URL}/movie/${id}/similar?api_key=${API_KEY}`;
 
+const personalDetail = (id) => `${BASE_URL}/person/${id}?api_key=${API_KEY}`;
+
+const personMovies = (id) =>
+  `${BASE_URL}/person/movie_credits${id}?api_key=${API_KEY}`;
+
 export const fetchMovieDetail = (id) => {
   return apiRequest(movieDetail(id));
 };
@@ -26,6 +31,14 @@ export const fetchMovieCredits = (id) => {
 
 export const fetchSimilarMovie = (id) => {
   return apiRequest(similarMovie(id));
+};
+
+export const fetchPersonDetail = (id) => {
+  return apiRequest(personalDetail(id));
+};
+
+export const fetchPersonMovies = (id) => {
+  return apiRequest(personMovies(id));
 };
 
 export const fetchUpcomingMovie = () => {

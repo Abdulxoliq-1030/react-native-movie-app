@@ -19,6 +19,8 @@ import {
   image500,
 } from "../api";
 import Loader from "../components/loader";
+import Cast from "../components/cast";
+import UpcomingMovie from "../components/upcoming-movie";
 
 const { width, height } = Dimensions.get("window");
 
@@ -124,6 +126,11 @@ export default function Movie() {
           {movie?.overview}
         </Text>
       </View>
+      {movie?.id && cast.length > 0 && <Cast cast={cast} />}
+
+      {movie?.id && similarMovie.length > 0 && (
+        <UpcomingMovie upcoming={similarMovie} title="Similar movies" />
+      )}
     </ScrollView>
   );
 }

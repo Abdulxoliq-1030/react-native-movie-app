@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -13,13 +13,16 @@ import TrendingMovie from "../components/trending-movie";
 import TopRatedMovie from "../components/top-rated-movie";
 import UpcomingMovie from "../components/upcoming-movie";
 import Loader from "../components/loader";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Home({ navigation }) {
+export default function Home() {
   const [trending, setTrending] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
   const [topRated, setTopRated] = useState([]);
   const [popular, setPopular] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigation = useNavigation();
 
   const getTrendingMovie = async () => {
     const data = await fetchTrendingMovie();
@@ -55,7 +58,9 @@ export default function Home({ navigation }) {
         <StatusBar style="light" />
         <View className="flex-row justify-between items-center mx-4">
           <Text style={{ color: "#fff", fontSize: 40 }}>Movie</Text>
-          <MagnifyingGlassIcon size={30} strokeWidth={2} color={"#fff"} />
+          <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+            <MagnifyingGlassIcon size={30} strokeWidth={2} color={"#fff"} />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
 

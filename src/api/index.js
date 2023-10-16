@@ -7,6 +7,7 @@ const trendingMovie = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`;
 const upcomingMovie = `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`;
 const topRatedMovie = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}`;
 const popularMovie = `${BASE_URL}/movie/popular?api_key=${API_KEY}`;
+const searchMovie = `${BASE_URL}/search/movie?api_key=${API_KEY}`;
 
 const movieDetail = (id) => `${BASE_URL}/movie/${id}?api_key=${API_KEY}`;
 
@@ -55,6 +56,10 @@ export const fetchTrendingMovie = () => {
 
 export const fetchTopRatedMovie = () => {
   return apiRequest(topRatedMovie);
+};
+
+export const fetchSearchMovie = (params) => {
+  return apiRequest(searchMovie, params);
 };
 
 export const image500 = (posterPath) => {

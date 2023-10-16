@@ -2,6 +2,7 @@ import React from "react";
 import { Dimensions, Text, View } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import MovieCard from "./movie-card";
+import Loader from "./loader";
 
 const { width, height } = Dimensions.get("window");
 
